@@ -1,0 +1,14 @@
+/Users/chrise26/Projects/RefTest/RefTest/obj/iPhone/Debug/Xamarin.iOS,Version=v1.0.AssemblyAttribute.cs
+/Users/chrise26/Projects/RefTest/RefTest/obj/iPhone/Debug/ibtool/LaunchScreen.nib
+/Users/chrise26/Projects/RefTest/RefTest/obj/iPhone/Debug/ibtool/Main.storyboardc/BYZ-38-t0r-view-8bC-Xf-vdC.nib
+/Users/chrise26/Projects/RefTest/RefTest/obj/iPhone/Debug/ibtool/Main.storyboardc/Info.plist
+/Users/chrise26/Projects/RefTest/RefTest/obj/iPhone/Debug/ibtool/Main.storyboardc/UIViewController-6.nib
+/Users/chrise26/Projects/RefTest/RefTest/obj/iPhone/Debug/actool/partial-info.plist
+/Users/chrise26/Projects/RefTest/RefTest/obj/iPhone/Debug/actool/asset-manifest.plist
+/Users/chrise26/Projects/RefTest/RefTest/obj/iPhone/Debug/
+/Users/chrise26/Projects/RefTest/RefTest/bin/iPhone/Debug/RefTest.exe.mdb
+/Users/chrise26/Projects/RefTest/RefTest/bin/iPhone/Debug/RefTest.exe
+/Users/chrise26/Projects/RefTest/RefTest/obj/iPhone/Debug/RefTest.exe
+/Users/chrise26/Projects/RefTest/RefTest/obj/iPhone/Debug/RefTest.exe.mdb
+/Users/chrise26/Projects/RefTest/RefTest/bin/iPhone/Debug/Calabash.dll
+/Users/chrise26/Projects/RefTest/RefTest/obj/iPhone/Debug/ibtool/Main.storyboardc/46-view-47.nib

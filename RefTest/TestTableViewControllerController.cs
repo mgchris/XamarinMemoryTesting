@@ -44,7 +44,10 @@ namespace RefTest
 
             dataItems = new List<TestItem>();
             dataItems.Add(new TestItem("Collect Garabage", nc 
-                => GC.Collect()));
+                => {
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+            }));
 
             dataItems.Add(new TestItem("Fill Up Memory", nc 
                 => nc.PushViewController(new MemoryFillUpViewController(), true)));

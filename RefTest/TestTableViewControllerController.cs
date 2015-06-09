@@ -18,6 +18,7 @@ namespace RefTest
         {
             base.ViewDidLoad();
             TableView.Source = new TestTableViewControllerSource(NavigationController);
+            TableView.RowHeight = UITableView.AutomaticDimension;
         }
     }
 
@@ -52,25 +53,25 @@ namespace RefTest
             _navigationController = navigationController;
 
             dataItems = new List<TestItem>();
-            dataItems.Add(new TestItem("Collect Garabage", nc 
+            dataItems.Add(new TestItem("Collect Garabage", "This will cause the garbage collect to run", nc 
                 => {
                 GC.Collect();
                 GC.WaitForPendingFinalizers();
             }));
 
-            dataItems.Add(new TestItem("Fill Up Memory", nc 
+            dataItems.Add(new TestItem("Fill Up Memory", "This will create a bunch of objects and show that the finalizer gets called when it gets popped.", nc 
                 => nc.PushViewController(new MemoryFillUpViewController(), true)));
 
-            dataItems.Add(new TestItem("Bad Event Handle", nc 
+            dataItems.Add(new TestItem("Bad Event Handle", "This view controller will never get release when created because of event delegates", nc 
                 => nc.PushViewController(new BadEventHandleViewController(), true)));
 
-            dataItems.Add(new TestItem("Good Event Handle", nc 
+            dataItems.Add(new TestItem("Good Event Handle", "Shows one way of dealing with event delegate", nc 
                 => nc.PushViewController(new EventHandleViewController(), true)));
 
-            dataItems.Add(new TestItem("Keyboard Notification", nc 
+            dataItems.Add(new TestItem("Keyboard Notification", "Shows one way of dealing with notifications", nc 
                 => nc.PushViewController(new KeyboardNotificationViewController(), true)));
 
-            dataItems.Add(new TestItem("Weak Alert Notification", nc 
+            dataItems.Add(new TestItem("Weak Alert Notification", "Example of how we can use WeakReference to simplify events", nc 
                 => nc.PushViewController(new WeakAlertViewController(), true)));
         }
 
@@ -92,6 +93,7 @@ namespace RefTest
 
             var item = dataItems[indexPath.Row];
             cell.TextLabel.Text = item.Title;
+            cell.DetailTextLabel.Text = item.DetailText;
 
             return cell;
         }
@@ -110,10 +112,10 @@ namespace RefTest
         public static readonly NSString Key = new NSString("TestTableViewControllerCell");
 
         public TestTableViewControllerCell()
-            : base(UITableViewCellStyle.Value1, Key)
+            : base(UITableViewCellStyle.Subtitle, Key)
         {
-            // TODO: add subviews to the ContentView, set various colors, etc.
             TextLabel.Text = "TextLabel";
+            DetailTextLabel.Lines = 0;
         }
     }
 }

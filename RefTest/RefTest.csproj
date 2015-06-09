@@ -104,6 +104,7 @@
     <Compile Include="Controllers\EventHandleViewController.cs" />
     <Compile Include="Controllers\MemoryViewController.cs" />
     <Compile Include="Controllers\KeyboardNotificationViewController.cs" />
+    <Compile Include="Controllers\WeakAlertViewController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>

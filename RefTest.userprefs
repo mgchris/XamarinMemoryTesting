@@ -4,15 +4,13 @@
     <Files>
       <File FileName="RefTest/AppDelegate.cs" Line="1" Column="1" />
       <File FileName="RefTest/WeakEventManager.cs" Line="1" Column="1" />
-      <File FileName="RefTest/TestTableViewControllerController.cs" Line="58" Column="50" />
-      <File FileName="RefTest/Log.cs" Line="37" Column="73" />
-      <File FileName="RefTest/ViewController.cs" Line="1" Column="1" />
-      <File FileName="RefTest/TestControllers/KeyboardNotificationViewController.cs" Line="42" Column="41" />
-      <File FileName="RefTest/TestControllers/EventHandleViewController.cs" Line="19" Column="38" />
-      <File FileName="RefTest/TestControllers/BadEventHandleViewController.cs" Line="13" Column="48" />
-      <File FileName="RefTest/TestControllers/MemoryViewController.cs" Line="24" Column="32" />
-      <File FileName="RefTest/TestControllers/BaseViewController.cs" Line="37" Column="50" />
-      <File FileName="RefTest/NotificationViewController.cs" Line="30" Column="37" />
+      <File FileName="RefTest/TestTableViewControllerController.cs" Line="41" Column="13" />
+      <File FileName="RefTest/Log.cs" Line="1" Column="1" />
+      <File FileName="RefTest/Controllers/KeyboardNotificationViewController.cs" Line="9" Column="29" />
+      <File FileName="RefTest/Controllers/EventHandleViewController.cs" Line="1" Column="1" />
+      <File FileName="RefTest/Controllers/BadEventHandleViewController.cs" Line="1" Column="1" />
+      <File FileName="RefTest/Controllers/MemoryViewController.cs" Line="1" Column="1" />
+      <File FileName="RefTest/Controllers/BaseViewController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -25,6 +23,6 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.RefTest>
-    <ProfileHeapShotSettings_27CDebug Output="/var/folders/d7/d9h9rsyj6hsdvh61wz6ds9k9mxn617/T/profiler-output.mlpd" Zip="True" HeapshotMode="ondemand" HeapshotGCInterval="1" HeapshotTimeInterval="1000" Calls="False" Alloc="False" CallDepth="100" StatisticalSampling="False" SampingFrequency="1000" MaxFrames="8" Mode="Memory" />
+    <ProfileHeapShotSettings_27CDebug Output="/var/folders/d7/d9h9rsyj6hsdvh61wz6ds9k9mxn617/T/profiler-output.mlpd" Zip="True" HeapshotMode="ondemand" HeapshotGCInterval="1" HeapshotTimeInterval="1000" Calls="False" Alloc="True" CallDepth="100" StatisticalSampling="False" SampingFrequency="1000" MaxFrames="8" Mode="Memory" />
   </MonoDevelop.Ide.ItemProperties.RefTest>
 </Properties>

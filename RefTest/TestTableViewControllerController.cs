@@ -24,11 +24,20 @@ namespace RefTest
     public class TestItem
     {
         readonly public string Title;
+        readonly public string DetailText;
         readonly public Action<UINavigationController> Action;
+
+        public TestItem(string title, string detailText, Action<UINavigationController> action)
+        {
+            Title = title;
+            DetailText = detailText;
+            Action = action;
+        }
 
         public TestItem(string title, Action<UINavigationController> action)
         {
             Title = title;
+            DetailText = null;
             Action = action;
         }
     }
@@ -60,6 +69,9 @@ namespace RefTest
 
             dataItems.Add(new TestItem("Keyboard Notification", nc 
                 => nc.PushViewController(new KeyboardNotificationViewController(), true)));
+
+            dataItems.Add(new TestItem("Weak Alert Notification", nc 
+                => nc.PushViewController(new WeakAlertViewController(), true)));
         }
 
         public override nint NumberOfSections(UITableView tableView)

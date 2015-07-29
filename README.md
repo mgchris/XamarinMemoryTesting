@@ -5,6 +5,8 @@ This code is used to help me understand how memory works with Xamarin and iOS.
 
 One thing to note I am making the asumption that in my examples the finalizers will get called, when we select the garabage collector option.  They're a lot of cases where this will not happen, but given how this code is structured I believe it will.
 
+The app shows a list of examples and action we can do.  For each example it will show when an viewController is created, disposed and finalized.  When running the app, you should watch the console output.  
+
 Helpful links for this is found here:
 https://forums.xamarin.com/discussion/comment/130400
 http://blog.adamkemp.com/2014/10/c-finalizers-and-idisposable.html

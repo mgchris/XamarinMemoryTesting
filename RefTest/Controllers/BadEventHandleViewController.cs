@@ -16,7 +16,7 @@ namespace RefTest
             var size = new CGSize(300, 30);
             var button = new UIButton(new CGRect(center.X - size.Width / 2, center.Y, size.Width, size.Height));
             button.SetTitle("I am bad", UIControlState.Normal);
-            button.TouchDown += HandleTap;
+            button.TouchDown += HandleTap;  // This is creating a Strong retain, that never will get collected
             View.AddSubview(button);
         }
 

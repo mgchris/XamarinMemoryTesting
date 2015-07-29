@@ -13,7 +13,8 @@ namespace RefTest
         {
             fillUp = new List<string>();
 
-            for (int index = 0; index < 100; index++)
+            const int tripGarabageCollector = 10000; // semi random count, that should cause the garabage collector to get called
+            for (int index = 0; index < tripGarabageCollector; index++) 
             {
                 fillUp.Add(CreateRandomString(10));
             }

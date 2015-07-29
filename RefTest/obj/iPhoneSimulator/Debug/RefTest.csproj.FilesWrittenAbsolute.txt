@@ -12,3 +12,17 @@
 /Users/chrise26/Projects/RefTest/RefTest/obj/iPhoneSimulator/Debug/RefTest.exe.mdb
 /Users/chrise26/Projects/RefTest/RefTest/bin/iPhoneSimulator/Debug/Calabash.dll
 /Users/chrise26/Projects/RefTest/RefTest/obj/iPhoneSimulator/Debug/ibtool/Main.storyboardc/46-view-47.nib
+/Users/chrise26/Documents/Code/Xamarin/Experiments/XamarinMemoryTesting/RefTest/obj/iPhoneSimulator/Debug/Xamarin.iOS,Version=v1.0.AssemblyAttribute.cs
+/Users/chrise26/Documents/Code/Xamarin/Experiments/XamarinMemoryTesting/RefTest/obj/iPhoneSimulator/Debug/ibtool/LaunchScreen.nib
+/Users/chrise26/Documents/Code/Xamarin/Experiments/XamarinMemoryTesting/RefTest/obj/iPhoneSimulator/Debug/ibtool/Main.storyboardc/46-view-47.nib
+/Users/chrise26/Documents/Code/Xamarin/Experiments/XamarinMemoryTesting/RefTest/obj/iPhoneSimulator/Debug/ibtool/Main.storyboardc/Info.plist
+/Users/chrise26/Documents/Code/Xamarin/Experiments/XamarinMemoryTesting/RefTest/obj/iPhoneSimulator/Debug/ibtool/Main.storyboardc/UIViewController-6.nib
+/Users/chrise26/Documents/Code/Xamarin/Experiments/XamarinMemoryTesting/RefTest/obj/iPhoneSimulator/Debug/actool/partial-info.plist
+/Users/chrise26/Documents/Code/Xamarin/Experiments/XamarinMemoryTesting/RefTest/obj/iPhoneSimulator/Debug/actool/asset-manifest.plist
+/Users/chrise26/Documents/Code/Xamarin/Experiments/XamarinMemoryTesting/RefTest/obj/iPhoneSimulator/Debug/
+/Users/chrise26/Documents/Code/Xamarin/Experiments/XamarinMemoryTesting/RefTest/bin/iPhoneSimulator/Debug/RefTest.exe.mdb
+/Users/chrise26/Documents/Code/Xamarin/Experiments/XamarinMemoryTesting/RefTest/bin/iPhoneSimulator/Debug/RefTest.exe
+/Users/chrise26/Documents/Code/Xamarin/Experiments/XamarinMemoryTesting/RefTest/obj/iPhoneSimulator/Debug/RefTest.exe
+/Users/chrise26/Documents/Code/Xamarin/Experiments/XamarinMemoryTesting/RefTest/obj/iPhoneSimulator/Debug/RefTest.exe.mdb
+/Users/chrise26/Documents/Code/Xamarin/Experiments/XamarinMemoryTesting/RefTest/bin/iPhoneSimulator/Debug/Calabash.dll
+/Users/chrise26/Documents/Code/Xamarin/Experiments/XamarinMemoryTesting/RefTest/obj/iPhoneSimulator/Debug/ibtool/GCNeededCalledTwiceViewController.nib

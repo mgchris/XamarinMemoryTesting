@@ -30,6 +30,7 @@ namespace RefTest
             base.ViewWillAppear(animated);
             if (obs1 == null)
             {
+                // ObjC code is creating the retain of this object, we just need to make sure we remove the Actions 
                 obs1 = NSNotificationCenter.DefaultCenter.AddObserver(UIKeyboard.WillShowNotification, n =>
                     {
                         Console.WriteLine("Keyboard Will show. This ref: " + this);
@@ -49,6 +50,7 @@ namespace RefTest
 
             if (obs1 != null)
             {
+                // We are being good and removing them
                 NSNotificationCenter.DefaultCenter.RemoveObserver (obs1);
                 NSNotificationCenter.DefaultCenter.RemoveObserver (obs2);
                 NavigationItem.RightBarButtonItem = null;  // NOTE: Got to get rid of the reference

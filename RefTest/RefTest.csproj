@@ -107,6 +107,11 @@
     <Compile Include="Controllers\WeakAlertViewController.cs" />
     <Compile Include="Controllers\GCNeededCalledTwiceViewController.cs" />
     <Compile Include="Controllers\WeakReferenceBadViewController.cs" />
+    <Compile Include="Controllers\TableViewControllerCellEvent.cs" />
+    <Compile Include="Controllers\TableViewControllerCellEvent.designer.cs">
+      <DependentUpon>TableViewControllerCellEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\EventHandlerTableViewSource.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>

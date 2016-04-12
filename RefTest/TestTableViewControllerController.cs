@@ -4,6 +4,7 @@ using System.CodeDom.Compiler;
 using UIKit;
 using System.Collections.Generic;
 using System.Linq;
+using RefTest.Controllers;
 
 namespace RefTest
 {
@@ -90,6 +91,9 @@ namespace RefTest
 
             dataItems.Add(new TestItem("Confusion", "Example requires GC to be called twice", nc 
                 => nc.PushViewController(new GCNeededCalledTwiceViewController(), true)));
+
+            dataItems.Add(new TestItem("Confusion", "Having events on a UITableViewCell", nc 
+                => nc.PushViewController(new TableViewControllerCellEvent(), true)));
         }
 
         public override nint NumberOfSections(UITableView tableView)

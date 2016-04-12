@@ -29,7 +29,7 @@ namespace RefTest.Controllers
         {
             base.ViewDidDisappear(animated);
 
-            _tableSource.LeavingFocus();
+            _tableSource.Dispose();
         }
     }
 }

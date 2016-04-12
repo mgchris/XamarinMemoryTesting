@@ -108,9 +108,7 @@ namespace RefTest
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
         {
-            var cell = tableView.DequeueReusableCell(TestTableViewControllerCell.Key) as TestTableViewControllerCell;
-            if (cell == null)
-                cell = new TestTableViewControllerCell();
+            var cell = tableView.DequeueReusableCell(TestTableViewControllerCell.Key) as TestTableViewControllerCell ?? new TestTableViewControllerCell();
 
             var item = dataItems[indexPath.Row];
             cell.TextLabel.Text = item.Title;

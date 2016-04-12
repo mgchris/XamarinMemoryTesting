@@ -1,5 +1,6 @@
 ﻿using System;
 using UIKit;
+using Foundation;
 
 namespace RefTest.Controllers
 {
@@ -18,6 +19,8 @@ namespace RefTest.Controllers
 
         string[] _displayCells;
         const int _sourceSize = 1024;
+
+        event EventHandler<string> SelectedEvent;
 
         public EventHandlerTableViewSource()
         {
@@ -43,9 +46,28 @@ namespace RefTest.Controllers
         }
 
         // --------------------
-        public void LeavingFocus()
+        public void LeavingFocus(UITableView tableView)
         {
+//            return;
 
+
+            for (int i = 0; i < _sourceSize; i++)
+            {
+                var cell = tableView.CellAt(NSIndexPath.Create(0, i));
+                if (cell != null)
+                {
+                    var eventCell = cell as EventTableViewCell;
+                    if (eventCell != null)
+                    {
+                        eventCell.SelectedEvent -= HandleClicked;
+                        eventCell.Dispose();
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+            }
         }
 
         public void EnterFocus()
@@ -60,34 +82,29 @@ namespace RefTest.Controllers
             return _sourceSize;
         }
 
-        public override void CellDisplayingEnded(UITableView tableView, UITableViewCell cell, Foundation.NSIndexPath indexPath)
+        public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
         {
-            var eventCell = cell as EventTableViewCell;
-            if (eventCell != null)
-            {
-                eventCell.SelectedEvent = null;
-            }
-        }
+            UITableViewCell cell = null;
 
-        public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
-        {
-            var cell = tableView.DequeueReusableCell(EventTableViewCell.Identifier) as EventTableViewCell ?? new EventTableViewCell();
-
-
-            var overrideButtonEvent = true;
+            const bool overrideButtonEvent = false;
 
             if (overrideButtonEvent)
             {
-                cell.Button.TouchDown -= HandleClickedOverride;
-                cell.Button.TouchDown += HandleClickedOverride;
+                var buttonCell = tableView.DequeueReusableCell(ButtonTableViewCell.Key) as ButtonTableViewCell ?? new ButtonTableViewCell();
+
+                buttonCell.Button.TouchDown -= HandleClickedOverride;
+                buttonCell.Button.TouchDown += HandleClickedOverride;
+
+                cell = buttonCell;
             }
             else
             {
-                if (cell.SelectedEvent == null)
-                {
-                    cell.useButtonHandle(true);
-                    cell.SelectedEvent = HandleClicked;
-                }
+                var eventCell = tableView.DequeueReusableCell(EventTableViewCell.Key) as EventTableViewCell ?? new EventTableViewCell();
+
+                eventCell.SelectedEvent -= HandleClicked;
+                eventCell.SelectedEvent += HandleClicked;
+
+                cell = eventCell;
             }
 
             cell.TextLabel.Text = _displayCells[indexPath.Row];
@@ -106,8 +123,7 @@ namespace RefTest.Controllers
         }
     }
 
-
-    class EventTableViewCell: UITableViewCell 
+    class BaseTableViewCell: UITableViewCell 
     {
         private string _uniqueId;
         public string UniqueId {
@@ -119,40 +135,11 @@ namespace RefTest.Controllers
             }
         }
 
-        static public string Identifier = "CellIdentifier";
-        public EventHandler<string> SelectedEvent;
-
-        public UIButton Button;
-
-        public EventTableViewCell()
+        public BaseTableViewCell(UITableViewCellStyle style, string key) : base(style, key)
         {
-            Log.State(this, UniqueId);
-
-            Button = new UIButton(UIButtonType.InfoDark);
-            AddSubview(Button);
         }
 
-        // The idea here is I can play with using the button event or not.
-        // If you pass in true then you need to make sure you have SelectedEvent set.
-        // Or you can set the button event manually
-        public void useButtonHandle(bool use)
-        {
-            if (use)
-            {
-                Button.TouchDown += HandleTap;
-            }
-            else
-            {
-                Button.TouchDown -= HandleTap;
-            }
-        }
-
-        public void HandleTap(object sender, EventArgs e)
-        {
-            SelectedEvent(this, TextLabel.Text);
-        }
-
-        ~EventTableViewCell()
+        ~BaseTableViewCell()
         {
             Log.State(this, UniqueId);
         }
@@ -160,6 +147,51 @@ namespace RefTest.Controllers
         protected override void Dispose (bool disposing)
         {
             Log.State(this, UniqueId);
+            base.Dispose (disposing);
+        }
+    }
+
+    class ButtonTableViewCell: BaseTableViewCell 
+    {
+        public static readonly NSString Key = new NSString("buttonCellIdent");
+
+        public UIButton Button;
+
+        public ButtonTableViewCell() : base(UITableViewCellStyle.Subtitle, Key)
+        {
+            Log.State(this, UniqueId);
+
+            Button = new UIButton(UIButtonType.InfoDark);
+            AddSubview(Button);
+        }
+    }
+
+
+    class EventTableViewCell: BaseTableViewCell 
+    {
+        public static readonly NSString Key = new NSString("EventCellIdent");
+
+        public event EventHandler<String> SelectedEvent;
+
+        public UIButton Button;
+
+        public EventTableViewCell() : base(UITableViewCellStyle.Subtitle, Key)
+        {
+            Log.State(this, UniqueId);
+
+            Button = new UIButton(UIButtonType.InfoDark);
+            Button.TouchDown += HandleTap;
+            AddSubview(Button);
+        }
+
+        public void HandleTap(object sender, EventArgs e)
+        {
+            SelectedEvent(this, TextLabel.Text);
+        }
+
+        protected override void Dispose (bool disposing)
+        {
+            Button.TouchDown -= HandleTap; // Note we have to clean up the events we created
             base.Dispose (disposing);
         }
     }

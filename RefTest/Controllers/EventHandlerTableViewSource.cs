@@ -1,11 +1,14 @@
 ﻿using System;
 using UIKit;
 using Foundation;
+using System.Collections.Generic;
 
 namespace RefTest.Controllers
 {
     public class EventHandlerTableViewSource: UITableViewSource
     {
+
+        HashSet<BaseTableViewCell> CleanUpCells = new HashSet<BaseTableViewCell>();
 
         private string _uniqueId;
         public string UniqueId {
@@ -33,7 +36,15 @@ namespace RefTest.Controllers
                 _displayCells[i] = "Cell: " + i;
             }
         }
-         
+
+        public void CleanUp()
+        {
+            foreach (var cell in CleanUpCells)
+            {
+                cell.CleanUp();
+            }
+        }
+
         ~EventHandlerTableViewSource()
         {
             Log.State(this, UniqueId);
@@ -84,7 +95,7 @@ namespace RefTest.Controllers
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
         {
-            UITableViewCell cell = null;
+            BaseTableViewCell cell = null;
 
             const bool overrideButtonEvent = false;
 
@@ -108,7 +119,9 @@ namespace RefTest.Controllers
             }
 
             cell.TextLabel.Text = _displayCells[indexPath.Row];
-           
+
+            CleanUpCells.Add(cell);
+
             return cell;
         }
 
@@ -144,6 +157,11 @@ namespace RefTest.Controllers
             Log.State(this, UniqueId);
         }
 
+        public virtual void CleanUp()
+        {
+
+        }
+
         protected override void Dispose (bool disposing)
         {
             Log.State(this, UniqueId);
@@ -164,6 +182,13 @@ namespace RefTest.Controllers
             Button = new UIButton(UIButtonType.InfoDark);
             AddSubview(Button);
         }
+
+
+        public void HandleClickedOverride(object sender, EventArgs text)  
+        {
+            Console.WriteLine("2 Did override TouchDown: " + sender + ": With args: " + text);
+        }
+
     }
 
 
@@ -189,9 +214,14 @@ namespace RefTest.Controllers
             SelectedEvent(this, TextLabel.Text);
         }
 
+        public override void CleanUp()
+        {
+            Button.TouchDown -= HandleTap;
+        }
+
         protected override void Dispose (bool disposing)
         {
-            Button.TouchDown -= HandleTap; // Note we have to clean up the events we created
+            //Button.TouchDown -= HandleTap; // Note we have to clean up the events we created
             base.Dispose (disposing);
         }
     }

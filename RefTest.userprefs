@@ -1,21 +1,16 @@
 ﻿<Properties StartupItem="RefTest/RefTest.csproj" RefactoringSettings.EnableRefactorings="True">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone5s.9.3" />
   <MonoDevelop.Ide.Workbench ActiveDocument="RefTest/Controllers/EventHandlerTableViewSource.cs">
     <Files>
       <File FileName="RefTest/AppDelegate.cs" Line="1" Column="1" />
-      <File FileName="RefTest/WeakEventManager.cs" Line="28" Column="23" />
-      <File FileName="RefTest/TestTableViewControllerController.cs" Line="93" Column="58" />
-      <File FileName="RefTest/Log.cs" Line="1" Column="1" />
-      <File FileName="RefTest/Controllers/EventHandleViewController.cs" Line="18" Column="13" />
-      <File FileName="RefTest/Controllers/BadEventHandleViewController.cs" Line="1" Column="1" />
-      <File FileName="RefTest/Controllers/MemoryViewController.cs" Line="18" Column="14" />
-      <File FileName="RefTest/Controllers/BaseViewController.cs" Line="32" Column="10" />
-      <File FileName="RefTest/Controllers/TableViewControllerCellEvent.cs" Line="32" Column="41" />
-      <File FileName="RefTest/Controllers/EventHandlerTableViewSource.cs" Line="87" Column="18" />
+      <File FileName="RefTest/WeakEventManager.cs" Line="1" Column="1" />
+      <File FileName="RefTest/TestTableViewControllerController.cs" Line="1" Column="1" />
+      <File FileName="RefTest/Controllers/TableViewControllerCellEvent.cs" Line="53" Column="39" />
+      <File FileName="RefTest/Controllers/EventHandlerTableViewSource.cs" Line="11" Column="16" />
       <File FileName="RefTest/Controllers/GCNeededCalledTwiceViewController.cs" Line="1" Column="1" />
-      <File FileName="RefTest/Main.cs" Line="1" Column="1" />
+      <File FileName="RefTest/Controllers/BaseViewController.cs" Line="20" Column="13" />
     </Files>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/chrise26/Projects/RefTest/RefTest/Memory.cs" line="14" column="13" />
@@ -25,7 +20,7 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.RefTest>
+  <MonoDevelop.Ide.ItemProperties.RefTest PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.3E89CF99-5D88-4FDC-A41A-17951A5DFD4D">
     <ProfileHeapShotSettings_27CDebug Output="/var/folders/d7/d9h9rsyj6hsdvh61wz6ds9k9mxn617/T/profiler-output.mlpd" Zip="True" HeapshotMode="ondemand" HeapshotGCInterval="1" HeapshotTimeInterval="1000" Calls="False" Alloc="True" CallDepth="100" StatisticalSampling="False" SampingFrequency="1000" MaxFrames="8" Mode="Memory" />
   </MonoDevelop.Ide.ItemProperties.RefTest>
 </Properties>
